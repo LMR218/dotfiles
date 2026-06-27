@@ -18,8 +18,8 @@ echo "--> Updating package databases..."
 sudo pacman -Syu --noconfirm
 
 # 2. Install official packages
-echo "--> Installing Git, GitHub CLI, Docker, and Zsh..."
-sudo pacman -S --needed --noconfirm git github-cli docker zsh
+echo "--> Installing Git, GitHub CLI, Docker, Zsh, PHP, and Composer..."
+sudo pacman -S --needed --noconfirm git github-cli docker zsh php composer
 
 # 3. Install AUR helper (yay) if not installed (EndeavourOS has it, but good for pure Arch)
 if ! command -v yay &> /dev/null; then
