@@ -7,18 +7,28 @@ Welcome to my personal system configurations and automation scripts repository! 
 * `.zshrc` (Future addition): Zsh configuration files.
 * `/docs`: Detailed documentation for individual setup scripts.
 * `/setup_dev_env.sh`: Main script to automate the full developer stack.
+* `/setup_spotify.sh`: Script to install and customize Spotify.
 
 ---
 
 ## Available Scripts
 
 ### 1. Developer Environment Setup (`setup_dev_env.sh`)
-Automates the installation of basic developer tools (Git, GitHub CLI, Docker, VS Code, Node.js, pnpm, Bun, and Zsh with autocompletions).
+Automates the installation of basic developer tools (Git, GitHub CLI, Docker, VS Code, Node.js, pnpm, Bun, and Zsh with autocompletions). It will optionally prompt you to run the Spotify installer at the end.
 
 * **Full Documentation**: See [docs/setup_dev_env.md](docs/setup_dev_env.md) for details.
 * **How to run**:
   ```bash
   curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_dev_env.sh && chmod +x setup_dev_env.sh && ./setup_dev_env.sh
+  ```
+
+### 2. Spotify & Spicetify Setup (`setup_spotify.sh`)
+Installs the official Spotify client wrapper and installs the Spicetify customization CLI + Marketplace interface.
+
+* **Full Documentation**: See [docs/setup_spotify.md](docs/setup_spotify.md) for details.
+* **How to run (Standalone)**:
+  ```bash
+  curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_spotify.sh && chmod +x setup_spotify.sh && ./setup_spotify.sh
   ```
 
 ---

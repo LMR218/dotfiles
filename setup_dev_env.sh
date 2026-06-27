@@ -88,6 +88,18 @@ fnm install --lts
 fnm default lts
 corepack enable
 
+# 11. Optional: Spotify & Spicetify Setup
+echo ""
+read -r -p "Do you want to install and customize Spotify with Spicetify? (y/N): " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    if [ -f "./setup_spotify.sh" ]; then
+        echo "--> Running Spotify setup script..."
+        ./setup_spotify.sh
+    else
+        echo "--> setup_spotify.sh not found in the current directory. Skipping."
+    fi
+fi
+
 echo "============================================="
 echo "=== SETUP COMPLETE! ==="
 echo "============================================="

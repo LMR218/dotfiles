@@ -42,6 +42,17 @@ The package installation commands use the `--needed` flag. If any of the request
 
 ---
 
+## Optional Steps
+
+### Spotify & Spicetify Installation
+At the end of the script, you will be prompted:
+```
+Do you want to install and customize Spotify with Spicetify? (y/N)
+```
+If you type `y` or `yes`, the script will automatically invoke `./setup_spotify.sh` to install Spotify and configure the Spicetify Marketplace.
+
+---
+
 ## Post-Installation Steps
 
 After running the script, you must manually complete these three quick steps:
