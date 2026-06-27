@@ -70,11 +70,15 @@ if [ -f "$ZSHRC" ]; then
     sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/g' "$ZSHRC"
 fi
 
-# 9. Configure fnm environment in .zshrc
-if ! grep -q "fnm env" "$ZSHRC"; then
-    echo "--> Adding fnm hook to .zshrc..."
-    echo 'eval "$(fnm env --use-on-cd)"' >> "$ZSHRC"
-fi
+# 9. Configure fnm environment in both .bashrc and .zshrc
+for shell_rc in "$HOME/.bashrc" "$HOME/.zshrc"; do
+    if [ -f "$shell_rc" ]; then
+        if ! grep -q "fnm env" "$shell_rc"; then
+            echo "--> Adding fnm hook to $(basename "$shell_rc")..."
+            echo 'eval "$(fnm env --use-on-cd)"' >> "$shell_rc"
+        fi
+    fi
+done
 
 # 10. Enable pnpm in Node via Corepack (will take effect once Node is installed)
 echo "--> Setting default Node.js version and enabling pnpm..."

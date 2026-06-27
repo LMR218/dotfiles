@@ -18,7 +18,7 @@ This script automates the installation and configuration of a modern development
 * **Bun (`bun-bin`)**: An all-in-one JavaScript/TypeScript runtime and toolkit.
 
 ### Configurations
-* **Node.js**: Automatically installs the latest LTS version and sets it as the system default.
+* **Node.js**: Automatically installs the latest LTS version and sets it as the system default. Both Bash and Zsh are automatically configured to load the FNM environment.
 * **pnpm**: Enabled via Node.js's built-in **Corepack** utility.
 * **Oh My Zsh**: Installed and configured as the Zsh framework.
 * **Zsh Plugins**:
