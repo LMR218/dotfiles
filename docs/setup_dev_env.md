@@ -20,6 +20,7 @@ This script automates the installation and configuration of a modern development
 ### Configurations
 * **Node.js**: Automatically installs the latest LTS version and sets it as the system default. Both Bash and Zsh are automatically configured to load the FNM environment.
 * **pnpm**: Enabled via Node.js's built-in **Corepack** utility.
+* **Husky Git Hooks**: Automatically configures the Husky directory (`~/.config/husky/init.sh`) to load `fnm`, ensuring Git commit hooks run without `command not found` errors.
 * **Oh My Zsh**: Installed and configured as the Zsh framework.
 * **Zsh Plugins**:
   * `zsh-autosuggestions`: Shows terminal suggestions based on your command history.

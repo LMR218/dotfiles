@@ -80,7 +80,15 @@ for shell_rc in "$HOME/.bashrc" "$HOME/.zshrc"; do
     fi
 done
 
-# 10. Enable pnpm in Node via Corepack (will take effect once Node is installed)
+# 10. Configure Husky init script for FNM
+echo "--> Configuring Husky hook compatibility with FNM..."
+mkdir -p "$HOME/.config/husky"
+HUSKY_INIT="$HOME/.config/husky/init.sh"
+if [ ! -f "$HUSKY_INIT" ] || ! grep -q "fnm env" "$HUSKY_INIT"; then
+    echo 'eval "$(fnm env)"' >> "$HUSKY_INIT"
+fi
+
+# 11. Enable pnpm in Node via Corepack (will take effect once Node is installed)
 echo "--> Setting default Node.js version and enabling pnpm..."
 # Load FNM environment in this script shell to run fnm commands
 eval "$(fnm env)"
