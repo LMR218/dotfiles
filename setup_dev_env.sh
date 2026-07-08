@@ -18,8 +18,8 @@ echo "--> Updating package databases..."
 sudo pacman -Syu --noconfirm
 
 # 2. Install official packages
-echo "--> Installing Git, GitHub CLI, Docker, Zsh, PHP, and Composer..."
-sudo pacman -S --needed --noconfirm git github-cli docker zsh php composer
+echo "--> Installing Git, GitHub CLI, Docker, Docker Compose, Zsh, PHP, and Composer..."
+sudo pacman -S --needed --noconfirm git github-cli docker docker-compose zsh php composer
 
 # 3. Install AUR helper (yay) if not installed (EndeavourOS has it, but good for pure Arch)
 if ! command -v yay &> /dev/null; then
@@ -31,9 +31,9 @@ if ! command -v yay &> /dev/null; then
     cd -
 fi
 
-# 4. Install AUR packages (VS Code, FNM, Bun)
-echo "--> Installing AUR packages (VS Code, FNM, Bun)..."
-yay -S --needed --noconfirm visual-studio-code-bin fnm-bin bun-bin
+# 4. Install AUR packages (VS Code, FNM, Bun, Brave Browser)
+echo "--> Installing AUR packages (VS Code, FNM, Bun, Brave)..."
+yay -S --needed --noconfirm visual-studio-code-bin fnm-bin bun-bin brave-bin
 
 # 5. Enable and configure Docker
 echo "--> Enabling and starting Docker daemon..."

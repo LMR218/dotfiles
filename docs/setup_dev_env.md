@@ -8,6 +8,7 @@ This script automates the installation and configuration of a modern development
 * **Git**: The standard version control system.
 * **GitHub CLI (`gh`)**: Command-line tool to manage pull requests, issues, and authentication with GitHub.
 * **Docker**: A containerization platform to run isolated application environments.
+* **Docker Compose**: A tool for defining and running multi-container Docker applications.
 * **Zsh**: A highly customizable shell designed for interactive use.
 * **PHP**: The PHP hypertext preprocessor runtime language.
 * **Composer**: The official package and dependency manager for PHP.
@@ -16,6 +17,7 @@ This script automates the installation and configuration of a modern development
 * **VS Code (`visual-studio-code-bin`)**: The official Microsoft binary version of VS Code (enables full extension marketplace support).
 * **FNM (`fnm-bin`)**: Fast Node Manager, a Rust-based Node.js version manager.
 * **Bun (`bun-bin`)**: An all-in-one JavaScript/TypeScript runtime and toolkit.
+* **Brave Browser (`brave-bin`)**: A privacy-focused, Chromium-based browser with built-in ad and tracker blocking.
 
 ### Configurations
 * **Node.js**: Automatically installs the latest LTS version and sets it as the system default. Both Bash and Zsh are automatically configured to load the FNM environment.
