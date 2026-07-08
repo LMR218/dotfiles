@@ -8,6 +8,7 @@ Welcome to my personal system configurations and automation scripts repository! 
 * `/docs`: Detailed documentation for individual setup scripts.
 * `/setup_dev_env.sh`: Main script to automate the full developer stack.
 * `/setup_spotify.sh`: Script to install and customize Spotify.
+* `/setup_gaming.sh`: Script to install Steam and gaming drivers.
 
 ---
 
@@ -29,6 +30,15 @@ Installs the official Spotify client wrapper and installs the Spicetify customiz
 * **How to run (Standalone)**:
   ```bash
   curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_spotify.sh && chmod +x setup_spotify.sh && ./setup_spotify.sh
+  ```
+
+### 3. Steam & Gaming Setup (`setup_gaming.sh`)
+Installs Steam, Steam Controller drivers, and auto-detects/installs the correct 32-bit Vulkan graphics driver for your hardware (NVIDIA/AMD/Intel).
+
+* **Full Documentation**: See [docs/setup_gaming.md](docs/setup_gaming.md) for details.
+* **How to run (Standalone)**:
+  ```bash
+  curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_gaming.sh && chmod +x setup_gaming.sh && ./setup_gaming.sh
   ```
 
 ---
