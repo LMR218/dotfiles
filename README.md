@@ -9,6 +9,7 @@ Welcome to my personal system configurations and automation scripts repository! 
 * `/setup_dev_env.sh`: Main script to automate the full developer stack.
 * `/setup_spotify.sh`: Script to install and customize Spotify.
 * `/setup_gaming.sh`: Script to install Steam and gaming drivers.
+* `/setup_media_stack.sh`: Script to deploy the automated Docker Media Stack (Servarr + Caddy).
 
 ---
 
@@ -39,6 +40,15 @@ Installs Steam, Steam Controller drivers, and auto-detects/installs the correct 
 * **How to run (Standalone)**:
   ```bash
   curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_gaming.sh && chmod +x setup_gaming.sh && ./setup_gaming.sh
+  ```
+
+### 4. Media Stack Setup (`setup_media_stack.sh`)
+Automates the deployment of a complete, unified media stack (Prowlarr, Sonarr, Radarr, qBittorrent, Caddy) with short domain aliases on port 8888.
+
+* **Full Documentation**: See [docs/setup_media_stack.md](docs/setup_media_stack.md) for details.
+* **How to run (Standalone)**:
+  ```bash
+  curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_media_stack.sh && chmod +x setup_media_stack.sh && ./setup_media_stack.sh
   ```
 
 ---
