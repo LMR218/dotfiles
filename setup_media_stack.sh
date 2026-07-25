@@ -39,11 +39,11 @@ MEDIA_STACK_DIR="$HOME/docker/media-stack"
 DATA_DIR="$HOME/data"
 
 echo "[INFO] Initializing directory structures..."
-mkdir -p "$MEDIA_STACK_DIR"/config/{prowlarr,sonarr,radarr,qbittorrent}
+mkdir -p "$MEDIA_STACK_DIR"/config/{prowlarr,sonarr,radarr,qbittorrent,bazarr}
 mkdir -p "$DATA_DIR"/downloads "$DATA_DIR"/media/{tv,movies}
 
 echo "[INFO] Updating /etc/hosts for short domain aliases..."
-DOMAINS=("prowlarr" "sonarr" "radarr" "qbit")
+DOMAINS=("prowlarr" "sonarr" "radarr" "qbit" "bazarr")
 for domain in "${DOMAINS[@]}"; do
     if ! grep -q -w "$domain" /etc/hosts; then
         echo "127.0.0.1 $domain" | sudo tee -a /etc/hosts >/dev/null
@@ -71,6 +71,10 @@ http://qbit {
     reverse_proxy qbittorrent:8085 {
         header_up Host localhost:8085
     }
+}
+
+http://bazarr {
+    reverse_proxy bazarr:6767
 }
 EOF
 
@@ -145,6 +149,21 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=auto
+    volumes:
+      - ./config/bazarr:/config
+      - ~/data/media/movies:/movies
+      - ~/data/media/tv:/tv
+    ports:
+      - 6767:6767
+    restart: unless-stopped
 EOF
 
 echo "[INFO] Deploying Docker containers..."
@@ -159,4 +178,5 @@ echo "  - Prowlarr:    http://prowlarr:8888"
 echo "  - Sonarr:      http://sonarr:8888"
 echo "  - Radarr:      http://radarr:8888"
 echo "  - qBittorrent: http://qbit:8888"
+echo "  - Bazarr:      http://bazarr:8888"
 echo "=========================================="

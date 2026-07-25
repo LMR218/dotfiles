@@ -1,12 +1,13 @@
 # Media Stack Setup Script (`setup_media_stack.sh`)
 
-Automates the deployment of a complete, unified media stack (Prowlarr, Sonarr, Radarr, qBittorrent) using Docker Compose and Caddy Reverse Proxy with short domain aliases on port 8888.
+Automates the deployment of a complete, unified media stack (Prowlarr, Sonarr, Radarr, qBittorrent, Bazarr) using Docker Compose and Caddy Reverse Proxy with short domain aliases on port 8888.
 
 ## Included Services
 - **Prowlarr:** Indexer / Tracker manager (`http://prowlarr:8888`)
 - **Sonarr:** TV show manager (`http://sonarr:8888`)
 - **Radarr:** Movie manager (`http://radarr:8888`)
 - **qBittorrent:** Torrent download client (`http://qbit:8888`)
+- **Bazarr:** Subtitle manager for Arabic/English (`http://bazarr:8888`)
 - **Caddy:** Reverse proxy mapping short domain names to port 8888
 
 ## Prerequisites Check
@@ -33,7 +34,8 @@ curl -fsSL -O https://raw.githubusercontent.com/LMR218/dotfiles/main/setup_media
     ├── prowlarr/
     ├── sonarr/
     ├── radarr/
-    └── qbittorrent/
+    ├── qbittorrent/
+    └── bazarr/
 
 ~/data/
 ├── downloads/
