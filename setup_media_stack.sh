@@ -68,7 +68,9 @@ http://radarr {
 }
 
 http://qbit {
-    reverse_proxy qbittorrent:8085
+    reverse_proxy qbittorrent:8085 {
+        header_up Host localhost:8085
+    }
 }
 EOF
 
