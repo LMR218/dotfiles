@@ -12,6 +12,7 @@ This script automates the installation and configuration of a modern development
 * **Zsh**: A highly customizable shell designed for interactive use.
 * **PHP**: The PHP hypertext preprocessor runtime language.
 * **Composer**: The official package and dependency manager for PHP.
+* **VLC**: A versatile open-source multimedia player.
 
 ### AUR Packages (via `yay`)
 * **VS Code (`visual-studio-code-bin`)**: The official Microsoft binary version of VS Code (enables full extension marketplace support).
